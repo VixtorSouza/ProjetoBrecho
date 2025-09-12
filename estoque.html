@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brechó - Controle de Estoque</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="main-app" style="display:none;">
+    <h2>Bem-vindo ao Controle de Estoque</h2>
+    <button onclick="showSection('register')">Cadastrar Nova Peça</button>
+    <button onclick="showSection('inventory')">Visualizar Estoque</button>
+    <button onclick="logout()">Sair</button>
+
+    <div id="register-section" class="section">
+      <h3>Cadastrar Nova Peça</h3>
+      <input type="text" id="item-name" placeholder="Nome da Peça" />
+      <input type="text" id="item-category" placeholder="Categoria" />
+      <input type="text" id="item-size" placeholder="Tamanho" />
+      <input type="text" id="item-color" placeholder="Cor" />
+      <input type="text" id="item-image" placeholder="URL da Imagem (opcional)" />
+      <input type="number" id="item-price" placeholder="Preço" />
+      <input type="number" id="item-quantity" placeholder="Quantidade" />
+      <button onclick="addItem()">Salvar</button>
+    </div>
+
+    <div id="inventory-section" class="section">
+      <h3>Estoque</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Tam.</th>
+            <th>Cor</th>
+            <th>Preço</th>
+            <th>Qtd.</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="inventory-table"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
